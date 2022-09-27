@@ -9,7 +9,7 @@ for (let i = 0; i < data.length; i +=1) {
     img.width = 300
     img.height = 300
     
-    newDiv.appendChild (img)
+    newDiv.appendChild(img)
     console.log(img)
     itemsContainer.appendChild(newDiv)
 

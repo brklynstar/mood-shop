@@ -35,3 +35,49 @@ body {
     color: white;
 }
 
+.items {
+    width: 80%;
+    margin: auto;
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+  }
+
+ 
+  .items img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Style Entire Card */
+  .item {
+   
+  }
+
+   /* Styling Image Card */
+  .item img {
+
+  }
+
+  /* Styling Paragraphs */
+  .item p {
+
+  }
+
+  /*  */
+.item p:nth-child(1){
+
+  }
+
+.item p:nth-child(2) {
+
+}
+
+/* Styling Add to Cart */
+
+.item button {
+
+}
+
+
