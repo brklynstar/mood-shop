@@ -7,7 +7,6 @@ body {
 }
 
 
-
 .page-header {
     display: flex;
     flex-direction: row;
@@ -50,34 +49,5 @@ body {
     height: auto;
   }
 
-  /* Style Entire Card */
-  .item {
-   
-  }
-
-   /* Styling Image Card */
-  .item img {
-
-  }
-
-  /* Styling Paragraphs */
-  .item p {
-
-  }
-
-  /*  */
-.item p:nth-child(1){
-
-  }
-
-.item p:nth-child(2) {
-
-}
-
-/* Styling Add to Cart */
-
-.item button {
-
-}
 
 
