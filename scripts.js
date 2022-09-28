@@ -20,35 +20,22 @@ for (let i = 0; i < data.length; i += 1) {
 	price.innerText = data[i].price
 	newDiv.appendChild(price)
 
-    const button = document.createElement('button')
+    const button = document.createElement("Button")
     button.id = data[i].name
 
     button.dataset.price = data[i].price
 	button.innerHTML = "Add to Cart"
 	newDiv.appendChild(button)
 }
-
-
-
-
-    const button = document.createElement("Button")
-    button.id = data[i].name
-
-
-    button.dataset.price = data[i].price
-    button.innerHTML = "Add to Cart"
-    newDiv.appendChild(button)
-
-
     
-    const cart =[]
-
+    const cart = []
     function addItem(name, price) {
-    cart.push(name)
+        const item = { name: name, price: price, qty: 1}
+        cart.push(item)
     }
 
-    function showItems(){
-    console.log(cart)
+    function showItems() {
+        console.log( cart `You have ${cart.length} items in your cart` )
     }
 
     addItem("Apple", 0.99)
