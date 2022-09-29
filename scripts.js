@@ -47,11 +47,11 @@ for (let i = 0; i < data.length; i += 1) {
     // Function to Show Items
 
         function showItems() {
-        const qty =getQty()
-        console.log(`You have ${getQty} items in your cart`)
-
-        for (let i = 0; i < cart.length; i += 1) {  
-        console.log (`${cart[i].name} $${cart[i].price} x ${cart[i].qty}`) 
+            const qty =getQty()
+            console.log(`You have ${qty} items in your cart`)
+            for (let i = 0; i < cart.length; i += 1) {  
+        
+                console.log (`${cart[i].name} $${cart[i].price} x ${cart[i].qty}`) 
         }
 
         console.log(`Total in cart: $${getTotal()}`)
