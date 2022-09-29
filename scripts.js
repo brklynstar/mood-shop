@@ -30,15 +30,55 @@ for (let i = 0; i < data.length; i += 1) {
     
     const cart = []
     function addItem(name, price) {
+        for (let i =0; i < cart.length; i += 1){
+            if (cart[i].name === name) {
+                cart[i].qty +=1
+                return
+            }
+        }
+        
         const item = { name: name, price: price, qty: 1}
         cart.push(item)
     }
 
+  
     function showItems() {
-        console.log( cart `You have ${cart.length} items in your cart` )
+        let qty = 0
+        for (let i = 0; i < cart.length; i += 1) {
+            qty += cart[i].qty
+        }
+
+        console.log(`You have ${qty} items in your cart`)
+   
+        for (let i = 0; i < cart.length; i += 1) {  
+        console.log (`${cart[i].name} $${cart[i].price} x ${cart[i].qty}`) 
+        }
+
+        
+
+        let total = 0
+        for (let i = 0; i < cart.length; i += 1) {
+            total += cart[i].price * cart[i].qty
+            
+        }
+        console.log (`Total in cart: $${total}`)
     }
 
-    addItem("Apple", 0.99)
-    addItem("Orange", 1.29)
+
+    addItem("Happiness", 5.99)
+    addItem("Sadness", 5.99)
+    addItem("Anger", 5.99)
+    addItem("Calmness", 5.99)
+    addItem("Curiousness", 5.99)
+    addItem("Disgust", 5.99)
+    addItem("Energy", 5.99)
+    addItem("Depression", 5.99)
+    addItem("Fearfulness", 5.99)
+    addItem("Shyness", 5.99)
+    addItem("Sleep", 5.99)
+    addItem("Surprise", 5.99)
+    addItem("Surprise", 5.99)
+    
+
 
     showItems()
