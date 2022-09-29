@@ -36,11 +36,23 @@ for (let i = 0; i < data.length; i += 1) {
 
 //  Shopping Cart
 
-const itemList = document.getElementById('item-list')
-const cartQty = document.getElementById('cart-qty')
-const cartTotal = document.getElementById('cart-total')
+const itemList = document.getElementById("item-list")
+const cartQty = document.getElementById("cart-qty")
+const cartTotal = document.getElementById("cart-total")
 const cart = []
 
+
+// -----------------------------------------------------------------------------------
+//  Handle Clicks on Lists
+itemList.onclick = function(e) {
+    if (e.target && e.target.classList.contains("remove")) {
+       const name = e.target.dataset.name
+        removeItem(name)
+
+    }
+    }
+
+}
 // -----------------------------------------------------------------------------------
 // Function to Add Item
 
@@ -71,11 +83,14 @@ function showItems() {
     
     const { name, price, qty } = cart[i]
 
-    itemStr += `<li>${name} $${price} x ${qty} = ${qty * price}</li>`
+    itemStr += `<li>
+    ${name} $${price} x ${qty} = ${qty * price}
+    <button class="remove" data-name"${name}">Remove</button>
+    </li>`
       
     
   }
-  
+
   itemList.innerHTML = itemStr
 
 //   console.log(`Total in cart: $${getTotal()}`)
@@ -119,6 +134,7 @@ function removeItem(name, qty = 0) {
         if (cart[i].qty < 1 || qty === 0) {
         cart.splice(i, 1)
       }
+      showItems()
       return
     }
   }
