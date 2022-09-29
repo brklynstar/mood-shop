@@ -31,13 +31,19 @@ for (let i = 0; i < data.length; i += 1) {
   newDiv.appendChild(button)
 }
 
+
+// -----------------------------------------------------------------------------------
+
 //  Shopping Cart
+
 const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
 const cartTotal = document.getElementById('cart-total')
 const cart = []
+
 // -----------------------------------------------------------------------------------
 // Function to Add Item
+
 function addItem(name, price) {
   for (let i = 0; i < cart.length; i += 1) {
     if (cart[i].name === name) {
@@ -46,11 +52,7 @@ function addItem(name, price) {
     }
   }
 
-  const item = {
-    name,
-    price,
-    qty: 1
-  }
+  const item = {name, price, qty: 1}
   cart.push(item)
 }
 
@@ -70,16 +72,22 @@ function showItems() {
     const { name, price, qty } = cart[i]
 
     itemStr += `<li>${name} $${price} x ${qty} = ${qty * price}</li>`
-                   
+      
+    
   }
+  
   itemList.innerHTML = itemStr
 
 //   console.log(`Total in cart: $${getTotal()}`)
   cartTotal.innerHTML = `Total in cart: $${getTotal()}`
+  
 }
+
+
 
 // -----------------------------------------------------------------------------------
 // Function to Get Qty
+
 function getQty() {
   let qty = 0
   for (let i = 0; i < cart.length; i += 1) {
@@ -87,8 +95,10 @@ function getQty() {
   }
   return qty
 }
+
 // -----------------------------------------------------------------------------------
 // Function to Get Total
+
 function getTotal() {
   let total = 0
   for (let i = 0; i < cart.length; i += 1) {
@@ -98,6 +108,8 @@ function getTotal() {
 }
 
 // -----------------------------------------------------------------------------------
+// Function to Remove Item
+
 function removeItem(name, qty = 0) {
   for (let i = 0; i < cart.length; i += 1) {
     if (cart[i].name === name) {
@@ -111,6 +123,14 @@ function removeItem(name, qty = 0) {
     }
   }
 }
+
+// -----------------------------------------------------------------------------------
+
+const all_items_button = Array.from(document.querySelectorAll("button"));
+all_items_button.forEach(elt => elt.addEventListener('click', () => {
+    addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+    showItems()
+  }))
 // -----------------------------------------------------------------------------------
 // Test Code
 
