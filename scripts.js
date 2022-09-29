@@ -77,6 +77,7 @@ function addItem(name, price) {
   for (let i = 0; i < cart.length; i += 1) {
     if (cart[i].name === name) {
       cart[i].qty += 1
+      showItems()
       return
     }
   }
@@ -110,9 +111,9 @@ function showItems() {
 
     itemStr += `<li>
     ${name} $${price} x ${qty} = ${qty * price}
-    <button class="remove" data-name"${name}">Remove </button>
-    <button class="remove" data-name"${name}"> + </button>
-    <button class="add-one" data-name"${name}"> - </button>
+    <button class="remove" data-name" = ${name}">Remove </button>
+    <button class="remove" data-name" = ${name}"> + </button>
+    <button class="add-one" data-name" = ${name}"> - </button>
     <input class ="update" type="number" data-name ="${name}">
     </li>`
 
@@ -171,14 +172,17 @@ function removeItem(name, qty = 0) {
 // -----------------------------------------------------------------------------------
 function updateCart(name, qty) {
   for (let i = 0; i < cart.length; i += 1) {
-    if (cart[i].name === name) {
-      cart[i].qty = qty
-      showItems()
-      return
+      if (cart[i].name === name) {
+          if (qty < 1) {
+              removeItem(name)
+              return
+          }
+          cart[i].qty = qty
+          showItems()
+          return
+        }
+      }
     }
-  }
-}
-
 // -----------------------------------------------------------------------------------
 
 const all_items_button = Array.from(document.querySelectorAll("button"));

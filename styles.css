@@ -4,6 +4,7 @@ body {
     line-height: 1.5;
     margin: 0;
     color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255) ;
 }
 
 
@@ -11,7 +12,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
 }
 
 .page-header ul {
@@ -19,6 +20,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+    
   
 }
 
@@ -48,6 +50,7 @@ body {
 
   .item {
     
+
 }
 
 
@@ -57,7 +60,12 @@ body {
   }
 
   .item p {
-
+    width: 80%;
+    margin: auto;
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
 
   }
 
