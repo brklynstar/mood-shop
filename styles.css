@@ -7,7 +7,7 @@ body {
     line-height: 1.5;
     margin: 0;
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255) ;
+    background-color: rgb(225, 219, 219) ;
 }
 
 
@@ -24,7 +24,6 @@ body {
     justify-content: space-between;
     list-style: none;
     
-  
 }
 
 .page-header a {
@@ -49,26 +48,21 @@ body {
     
   }
 
- 
-
-  .item {
-    
-
-}
-
+ .item {
+    display: ;
+ }
 
   .items img {
     width: 100%;
     height: auto;
   }
 
-  .item p {
+  .item ,p {
     width: 80%;
     margin: auto;
-  
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
 
   }
 
@@ -80,8 +74,11 @@ body {
 
  }
 
- .item button {
-
+.item button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
  }
 
 

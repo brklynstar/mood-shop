@@ -114,7 +114,7 @@ function showItems() {
     <button class="remove" data-name" = ${name}">Remove </button>
     <button class="remove" data-name" = ${name}"> + </button>
     <button class="add-one" data-name" = ${name}"> - </button>
-    <input class ="update" type="number" data-name ="${name}">
+  
     </li>`
 
 
